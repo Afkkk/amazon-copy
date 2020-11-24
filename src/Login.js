@@ -16,9 +16,17 @@ function Login() {
                 <form>
                     <h5>E-mail</h5>
                     <input type="text" />
+
                     <h5>Password</h5>
                     <input type="password" />
+
+                    <button className="login__signInButton">Sign In</button>
                 </form>
+                <p>
+                    By signing-in you agree to Amazon Clone Conditions of Use & Sale.
+                    Please see our Privacy Notice, our Cookies Notice and or Interest-Based Ads Notice.
+                </p>
+                <button className="login__registerButton">Create your Amazon account</button>
             </div>
         </div>
     )
