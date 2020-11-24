@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Login.css"
 
 function Login() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = e => {
+        e.preventDefault();
+
+
+    }
+
+    const register = e =>{
+        e.preventDefault();
+
+        
+    }
+
     return (
         <div className="login">
             <Link to="/">
@@ -15,18 +31,33 @@ function Login() {
                 <h1>Sign-in</h1>
                 <form>
                     <h5>E-mail</h5>
-                    <input type="text" />
+                    <input type="text" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)}
+                    />
 
                     <h5>Password</h5>
-                    <input type="password" />
+                    <input type="password" 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)}
+                    />
 
-                    <button className="login__signInButton">Sign In</button>
+                    <button
+                    type="submit"
+                    onClick={signIn} 
+                    className="login__signInButton">
+                        Sign In
+                    </button>
                 </form>
                 <p>
                     By signing-in you agree to Amazon Clone Conditions of Use & Sale.
                     Please see our Privacy Notice, our Cookies Notice and or Interest-Based Ads Notice.
                 </p>
-                <button className="login__registerButton">Create your Amazon account</button>
+                <button 
+                onClick={register}
+                className="login__registerButton">
+                    Create your Amazon account
+                </button>
             </div>
         </div>
     )
